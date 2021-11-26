@@ -9,7 +9,7 @@
 typedef struct Road
 {
     int size_road;
-    int lenght_road;
+    int length_road;
     int speed_limit;
     struct Car**  cars; //taille : size_road (nb ligne ) * lenght Road (nb colonnes)
 
