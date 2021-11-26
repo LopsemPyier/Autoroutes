@@ -7,7 +7,8 @@
 
 #include "types.h"
 
-void display(Road* route);
+void display(Road* road);
+void display_continue(Road* road, int wait);
 
 #endif //AUTOROUTES_DISPLAY_H
 

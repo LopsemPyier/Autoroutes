@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "types.h"
+#include "display.h"
 
 
 /*----------------------------------------------------------------
@@ -44,6 +45,29 @@ Car** avance (Road* road, Car** coming_cars, bool* blocked){
 
 
 int main(void){
+    int n = 10;
+    Car* cars = (Car*) malloc(sizeof(Car)*n);
+
+    Road road;
+    road.speed_limit = 10;
+    road.length_road = 10;
+    road.size_road = 1;
+    road.cars = (Car**) malloc(sizeof(Car*)*road.length_road);
+
+    for (int i = 0; i < road.length_road; ++i) {
+        road.cars[i] = NULL;
+    }
+
+
+    display_continue(&road, 1);
+    road.cars[0] = &cars[0];
+    display_continue(&road, 1);
+    road.cars[3] = &cars[1];
+    display_continue(&road, 1);
+    road.cars[4] = &cars[2];
+    display_continue(&road, 1);
+    road.cars[8] = &cars[3];
+    display_continue(&road, 1);
 
     return 0;
 }
