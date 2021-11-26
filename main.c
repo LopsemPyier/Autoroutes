@@ -2,39 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct Road;
-typedef struct  Car;
-typedef struct Inter;
-typedef struct City;
 
-
-typedef struct 
-{
-    int size_road;
-    int length_road;
-    int speed_limit;
-    Car**  cars; //taille : size_road (nb ligne ) * lenght Road (nb colonnes)
-    
-} Road;
-
-typedef struct
-{
-    Road* incident;
-    int time_feu;
-    Car** inside; // 2x2 pour le milieu de l'intersection
-    
-}Inter;
-
-typedef struct
-{
-    int speed;
-    Road* trajet; // GPS 
-    
-}Car;
-
-typedef struct {
-    Inter* node;
-} City;
 
 /*----------------------------------------------------------------
 cars : liste de pointeurs de taille road.size_road
